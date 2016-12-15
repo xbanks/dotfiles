@@ -8,6 +8,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
+Plug 'jelera/vim-javascript-syntax'
+
 
 call plug#end()
 
