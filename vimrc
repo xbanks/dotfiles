@@ -9,7 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jelera/vim-javascript-syntax'
-
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 
