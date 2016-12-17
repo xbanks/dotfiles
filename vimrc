@@ -4,36 +4,63 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Valloric/YouCompleteMe'
 Plug 'derekwyatt/vim-scala'
+Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
-filetype plugin indent on
-syntax enable
+
+" =========== General Settings
+" Theming
 
 set background=dark
 colorscheme solarized
+
+" Editing
+
+filetype plugin indent on
+syntax enable
 
 set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
 
-set ai
-set si
+set ai " autoindent
+set si " smartindent
 
 set number
-set autoread
+set autoread " auto-reload files changed outsude of the buffer
 set ruler
 
-" mappings
+set omnifunc=syntaxcomplete#Complete " auto-completion thingy
+
+" Key Mappings
 
 map <space> /
 map 0 ^
 
+map <Tab> :NERDTreeFocusToggle<CR>
+
 :imap jk <Esc>
+:imap kl <Esc>
+
+
+" =========== Typescript Stuff
+"
+" QuickFix menue on :make failures
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+
+" Compiler Options
+autocmd FileType typescript :set makeprg = tsc 
