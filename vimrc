@@ -40,11 +40,15 @@ set ai " autoindent
 set si " smartindent
 
 set number
+set relativenumber
 set autoread " auto-reload files changed outsude of the buffer
 set ruler
 
 set omnifunc=syntaxcomplete#Complete " auto-completion thingy
+" Custom commands
 
+command! Evimrc execute "tabnew ~/.vimrc"
+command! Ytest execute "!yarn test"
 " Key Mappings
 
 map <space> /
@@ -54,13 +58,14 @@ map <Tab> :NERDTreeFocusToggle<CR>
 
 :imap jk <Esc>
 :imap kl <Esc>
-
+:imap td // TODO(xavier): 
 
 " =========== Typescript Stuff
-"
+
 " QuickFix menue on :make failures
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Compiler Options
 autocmd FileType typescript :set makeprg = tsc 
+
