@@ -39,6 +39,7 @@ set tabstop=4
 set ai " autoindent
 set si " smartindent
 
+set wildmenu 
 set number
 set relativenumber
 set autoread " auto-reload files changed outsude of the buffer
