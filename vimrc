@@ -35,14 +35,20 @@ set expandtab
 set smarttab
 set shiftwidth=4
 set tabstop=4
-
 set ai " autoindent
 set si " smartindent
 
+set spell
+
 set number
 set relativenumber
+set cursorline
+set cursorcolumn
+
 set autoread " auto-reload files changed outsude of the buffer
 set ruler
+set showtabline=2
+set backspace=indent,eol,start
 
 set omnifunc=syntaxcomplete#Complete " auto-completion thingy
 " Custom commands
@@ -67,5 +73,5 @@ autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
 " Compiler Options
-autocmd FileType typescript :set makeprg = tsc 
+autocmd FileType typescript :set makeprg=tsc
 
