@@ -2,20 +2,21 @@ set nocompatible              " be iMproved, required
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'                   " Completion
 Plug 'derekwyatt/vim-scala'
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'scrooloose/nerdtree'                      " Filebrowser
+Plug 'jistr/vim-nerdtree-tabs'                  " NerdTree integration with tabs
+Plug 'vim-airline/vim-airline'                  " Bottom bar 
+Plug 'vim-airline/vim-airline-themes'           " Bottom bar themes
+Plug 'altercation/vim-colors-solarized'         " Solorized theme, make sure you set background=dark
 Plug 'jelera/vim-javascript-syntax'
 Plug 'pangloss/vim-javascript'
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'                           " Fuzzy file search
+Plug 'tpope/vim-fugitive'                       " git integration
+Plug 'mhinz/vim-signify'                        " Shows file changes on a version controlled file.
 
 call plug#end()
 
@@ -31,7 +32,7 @@ colorscheme solarized
 filetype plugin indent on
 syntax enable
 
-set expandtab
+set expandtab " always spaces, never tabs
 set smarttab
 set shiftwidth=4
 set tabstop=4
@@ -75,3 +76,6 @@ autocmd QuickFixCmdPost    l* nested lwindow
 " Compiler Options
 autocmd FileType typescript :set makeprg=tsc
 
+" vim-signify
+
+let g:signify_vcs_list = ['git']
