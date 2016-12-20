@@ -38,8 +38,8 @@ set tabstop=4
 set ai " autoindent
 set si " smartindent
 
-set spell
 
+set wildmenu 
 set number
 set relativenumber
 set cursorline
