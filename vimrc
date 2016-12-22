@@ -59,7 +59,12 @@ command! Ytest execute "!yarn test"
 " Key Mappings
 
 map <space> /
-map 0 ^
+map ; :
+
+" 1 (left side of keyboard) to go to beginning of line
+" 0 (right side of keyboard) to go to the end of the line
+map 1 ^
+map 0 $
 
 map <Tab> :NERDTreeFocusToggle<CR>
 
