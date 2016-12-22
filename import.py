@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+
+# This should only be used on the first install
+# after that, updating the repo will automatically result in updates
+# to the dotfiles since they're symlinked
+
 import os
 
 home = os.getenv('HOME')
