@@ -86,6 +86,7 @@ ZSH_TMUX_AUTOSTART=true
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim=nvim
+eval $(thefuck --alias)
 
 export PATH=$HOME/bin:$HOME/bin/node-v4.4.7-linux-x64/bin:$PATH
 

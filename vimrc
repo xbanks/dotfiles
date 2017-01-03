@@ -9,14 +9,20 @@ Plug 'jistr/vim-nerdtree-tabs'                  " NerdTree integration with tabs
 Plug 'vim-airline/vim-airline'                  " Bottom bar 
 Plug 'vim-airline/vim-airline-themes'           " Bottom bar themes
 Plug 'altercation/vim-colors-solarized'         " Solorized theme, make sure you set background=dark
-Plug 'jelera/vim-javascript-syntax'
-Plug 'pangloss/vim-javascript'
-Plug 'Quramy/tsuquyomi'
-Plug 'leafgarland/typescript-vim'
+Plug 'scrooloose/syntastic'                     " Syntax checking
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'kien/ctrlp.vim'                           " Fuzzy file search
 Plug 'tpope/vim-fugitive'                       " git integration
 Plug 'mhinz/vim-signify'                        " Shows file changes on a version controlled file.
+
+" Javascript
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+
+" Python
+Plug 'nvie/vim-flake8'
 
 call plug#end()
 
@@ -66,7 +72,12 @@ map ; :
 map 1 ^
 map 0 $
 
-map <Tab> :NERDTreeFocusToggle<CR>
+" Tab nav
+nnoremap tp     :tabprevious<CR>
+nnoremap tn     :tabnext<CR>
+nnoremap <C-t>  :tabnew<CR>
+
+map <S-d> :NERDTreeFocusToggle<CR>
 
 :imap jk <Esc>
 :imap kl <Esc>
@@ -84,3 +95,5 @@ autocmd FileType typescript :set makeprg=tsc
 " vim-signify
 
 let g:signify_vcs_list = ['git']
+
+let python_highlight_all=1
