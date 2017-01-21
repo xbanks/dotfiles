@@ -6,18 +6,24 @@
 
 import os
 
-home = os.getenv('HOME')
+home = os.path.expanduser('~')
 cwd = os.getcwd()
+inhome = lambda loc: os.path.join(home, loc)
 
 imports = {
-    'vimrc':        os.path.join(home, '.vimrc'),
-    'zshrc':        os.path.join(home, '.zshrc'),
-    'tmux.conf':    os.path.join(home, '.tmux.conf'),
-    'gitconfig':    os.path.join(home, '.gitconfig')
+    'vimrc':        inhome('.vimrc'),
+    'zshrc':        inhome('.zshrc'),
+    'tmux.conf':    inhome('.tmux.conf'),
+    'gitconfig':    inhome('.gitconfig'),
+    'xavier.zsh-theme':    inhome('.oh-my-zsh/themes/xavier.zsh-theme')
 }
 
 print('Importing')
 for local, dest in imports.items():
+    choice = input('import {} [Y/n]: '.format(local))
+    if choice.lower() == 'n':
+        continue
+
     if os.path.islink(dest):
         print('{}: Skipped (Already linked @ {})'.format(local, dest))
         continue
