@@ -24,6 +24,10 @@ Plug 'leafgarland/typescript-vim'
 " Python
 Plug 'nvie/vim-flake8'
 
+" Rust syntax and autocomplete
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
+
 call plug#end()
 
 
@@ -77,11 +81,11 @@ nnoremap tp     :tabprevious<CR>
 nnoremap tn     :tabnext<CR>
 nnoremap <C-t>  :tabnew<CR>
 
-map <S-d> :NERDTreeFocusToggle<CR>
+map <Tab> :NERDTreeFocusToggle<CR>
 
 :imap jk <Esc>
-:imap kl <Esc>
-:imap td // TODO(xavier): 
+" :imap kl <Esc>
+:imap tdx // TODO(xavier): 
 
 " =========== Typescript Stuff
 
@@ -97,3 +101,14 @@ autocmd FileType typescript :set makeprg=tsc
 let g:signify_vcs_list = ['git']
 
 let python_highlight_all=1
+
+
+" ============ Rust
+
+set hidden
+let g:racer_cmd = "/usr/bin/racer"
+let g:racer_experimental_completer = 1
+
+
+" =========== C++
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"

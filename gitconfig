@@ -1,0 +1,7 @@
+[user]
+    name = Xavier Banks
+    email = xavier95@knights.ucf.edu
+[core]
+    editor = vim
+[alias]
+    mnc = merge --no-commit
